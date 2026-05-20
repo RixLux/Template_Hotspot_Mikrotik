@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Logged Out - Hotspot</title>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+    <script type="text/javascript">
+        function openLogin() {
+            if (window.name != 'hotspot_logout') return true;
+            open('$(link-login)', '_blank', '');
+            window.close();
+            return false;
+        }
+    </script>
+
+    <div class="main-container">
+        <div class="left-panel" style="background-image: url('1.jpg');">
+            <div class="logo-text">Luxia</div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="status-icon success">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            
+            <div class="form-header">
+                <h2>LOGGED OUT</h2>
+                <p>Terima kasih telah menggunakan layanan hotspot kami. Sesi Anda telah diakhiri.</p>
+            </div>
+            
+            <div class="info-box">
+                <table class="info-table">  
+                    <tr><td>Username</td><td>$(username)</td></tr>
+                    <tr><td>IP Address</td><td>$(ip)</td></tr>
+                    <tr><td>MAC Address</td><td>$(mac)</td></tr>
+                    <tr><td>Session Time</td><td>$(uptime)</td></tr>
+                    $(if session-time-left)
+                    <tr><td>Time Left</td><td>$(session-time-left)</td></tr>
+                    $(endif)
+                    <tr><td>Usage (Up/Down)</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+                </table>
+            </div>
+            
+            <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+                <div class="button-container">
+                    <button type="submit">LOG IN AGAIN <i class="fas fa-redo"></i></button>
+                </div>
+            </form>
+            
+            <div class="footer">
+                <p>Created By <a href="https://github.com/RixLux" target="_blank">Luxia</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

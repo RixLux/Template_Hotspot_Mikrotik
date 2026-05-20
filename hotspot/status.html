@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Status - Hotspot</title>
+    $(if refresh-timeout)
+    <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+    $(endif)
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <script type="text/javascript">
+        $(if advert-pending == 'yes')
+            var popup = '';
+            function focusAdvert() {
+                if (window.focus) popup.focus();
+            }
+            function openAdvert() {
+                popup = open('$(link-advert)', 'hotspot_advert', '');
+                setTimeout("focusAdvert()", 1000);
+            }
+        $(endif)
+        function openLogout() {
+            if (window.name != 'hotspot_status') return true;
+            open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+            window.close();
+            return false;
+        }
+    </script>
+</head>
+<body $(if advert-pending == 'yes') onLoad="openAdvert()" $(endif)>
+    <div class="main-container">
+        <div class="left-panel">
+            <div class="logo-text">Luxia</div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="status-icon info">
+                <i class="fas fa-signal"></i>
+            </div>
+
+            <div class="form-header">
+                <h2>STATUS</h2>
+                $(if login-by == 'trial')
+                    <p>Welcome trial user!</p>
+                $(elif login-by != 'mac')
+                    <p>Welcome, $(username)!</p>
+                $(endif)
+            </div>
+
+            <div class="info-box">
+                <table class="info-table">
+                    <tr><td>IP Address</td><td>$(ip)</td></tr>
+                    <tr><td>Usage (Up/Down)</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+                    $(if session-time-left)
+                        <tr><td>Connected / Left</td><td>$(uptime) / $(session-time-left)</td></tr>
+                    $(else)
+                        <tr><td>Connected</td><td>$(uptime)</td></tr>
+                    $(endif)
+                    $(if blocked == 'yes')
+                        <tr><td>Status</td><td><span style="color: var(--error-color)">Advertisement required</span></td></tr>
+                    $(elif refresh-timeout)
+                        <tr><td>Refresh In</td><td>$(refresh-timeout)</td></tr>
+                    $(endif)
+                </table>
+            </div>
+
+            $(if login-by-mac != 'yes')
+            <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+                <div class="button-container">
+                    <button type="submit">LOG OFF <i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </form>
+            $(endif)
+
+            <div class="footer">
+                <p>Created By <a href="https://github.com/RixLux" target="_blank">Luxia</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

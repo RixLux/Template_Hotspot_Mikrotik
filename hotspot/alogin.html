@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Connecting... - Hotspot</title>
+    <meta http-equiv="refresh" content="3; url=$(link-redirect)">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <script type="text/javascript">
+        function startClock() {
+            $(if popup == 'true')
+            open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=290');
+            $(endif)
+        }
+    </script>
+</head>
+<body onload="startClock()">
+    <div class="main-container">
+        <div class="left-panel">
+            <div class="logo-text">Luxia</div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="loader"></div>
+
+            <div class="form-header">
+                <h2>CONNECTING</h2>
+                <p>Harap tunggu sebentar, Anda sedang dialihkan ke internet.</p>
+            </div>
+
+            <div class="info-box">
+                <p style="color: var(--light-text); font-size: 13px; text-align: center;">
+                    Jika Anda tidak dialihkan secara otomatis, silakan klik tombol di bawah ini.
+                </p>
+            </div>
+
+            <div class="button-container">
+                <a href="$(link-redirect)" class="btn">CONTINUE <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="footer">
+                <p>Created By <a href="https://github.com/RixLux" target="_blank">Luxia</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

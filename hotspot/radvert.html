@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Advertisement - Hotspot</title>
+    <meta http-equiv="refresh" content="3; url=$(link-orig)">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <script type="text/javascript">
+        var popup = '';
+        function openOrig() {
+            if (window.focus) popup.focus();
+            location.href = '$(link-orig)';
+        }
+        function openAd() {
+            location.href = '$(link-redirect)';
+        }
+        function openAdvert() {
+            if (window.name != 'hotspot_advert') {
+                popup = open('$(link-redirect)', 'hotspot_advert', '');
+                setTimeout("openOrig()", 1000);
+                return;
+            }
+            setTimeout("openAd()", 1000);
+        }
+    </script>
+</head>
+<body onload="openAdvert()">
+    <div class="main-container">
+        <div class="left-panel">
+            <div class="logo-text">Luxia</div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="status-icon info">
+                <i class="fas fa-ad"></i>
+            </div>
+
+            <div class="form-header">
+                <h2>ADVERTISEMENT</h2>
+                <p>Harap lihat iklan ini untuk melanjutkan akses internet Anda.</p>
+            </div>
+
+            <div class="loader"></div>
+
+            <div class="info-box">
+                <p style="color: var(--light-text); font-size: 13px; text-align: center;">
+                    Anda akan dialihkan secara otomatis...
+                </p>
+            </div>
+
+            <div class="button-container">
+                <a href="$(link-redirect)" target="hotspot_advert" class="btn">VIEW MANUALLY <i class="fas fa-external-link-alt"></i></a>
+            </div>
+
+            <div class="footer">
+                <p>Created By <a href="https://github.com/RixLux" target="_blank">Luxia</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
