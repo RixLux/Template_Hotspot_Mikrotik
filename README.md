@@ -2,6 +2,14 @@
 
 A modern, minimalist dark-themed template for Mikrotik Hotspot, built with a focus on aesthetics and performance.
 
+## Screenshots
+  <details>
+    <summary>Click to expand views</summary>
+    <img src="assets/images/login.png" alt="Login Page">
+    <img src="assets/images/logout.png" alt="Logout Page">
+    <img src="assets/images/status.png" alt="Status Page">
+  </details>
+
 ## Design Philosophy
 
 This template is built with **Low Memory** in mind. Most Mikrotik routers have very limited storage space. To keep the footprint as small as possible:
