@@ -31,35 +31,38 @@
 <body onload="openAdvert()">
     <div class="main-container">
         <div class="left-panel">
-            <div class="logo-text">Luxia</div>
+            <div class="logo-text">RixLux</div>
         </div>
         
         <div class="right-panel">
+            <div id="lang-selector-container" style="text-align: right; margin-bottom: 10px;"></div>
+            
             <div class="status-icon info">
                 <i class="fas fa-ad"></i>
             </div>
 
             <div class="form-header">
-                <h2>ADVERTISEMENT</h2>
-                <p>Harap lihat iklan ini untuk melanjutkan akses internet Anda.</p>
+                <h2 data-i18n="ad_title">ADVERTISEMENT</h2>
+                <p data-i18n="ad_desc">Harap lihat iklan ini untuk melanjutkan akses internet Anda.</p>
             </div>
 
             <div class="loader"></div>
 
             <div class="info-box">
-                <p style="color: var(--light-text); font-size: 13px; text-align: center;">
+                <p style="color: var(--light-text); font-size: 13px; text-align: center;" data-i18n="auto_redirect_msg">
                     Anda akan dialihkan secara otomatis...
                 </p>
             </div>
 
             <div class="button-container">
-                <a href="$(link-redirect)" target="hotspot_advert" class="btn">VIEW MANUALLY <i class="fas fa-external-link-alt"></i></a>
+                <a href="$(link-redirect)" target="hotspot_advert" class="btn" data-i18n="view_manually_button">VIEW MANUALLY <i class="fas fa-external-link-alt"></i></a>
             </div>
 
             <div class="footer">
-                <p>Created By <a href="https://github.com/RixLux" target="_blank">Luxia</a></p>
+                <p>Created By <a href="https://github.com/RixLux" target="_blank">RixLux</a></p>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="lang.js"></script>
 </body>
 </html>

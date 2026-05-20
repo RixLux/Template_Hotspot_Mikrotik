@@ -55,6 +55,7 @@ To make it easier to switch between **Online** (CDN-based) and **Offline** (loca
 -    Responsive Design (Mobile Friendly)
 -    Modern Dark Theme
 -    Lightweight and Fast
+-    Multiple Languange Support by modifying `lang.js`
 
 ## Created By
-[Luxia](https://github.com/RixLux)
+[RixLux](https://github.com/RixLux)

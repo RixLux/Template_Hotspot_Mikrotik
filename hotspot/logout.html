@@ -21,42 +21,45 @@
 
     <div class="main-container">
         <div class="left-panel" style="background-image: url('1.jpg');">
-            <div class="logo-text">Luxia</div>
+            <div class="logo-text">RixLux</div>
         </div>
         
         <div class="right-panel">
+            <div id="lang-selector-container" style="text-align: right; margin-bottom: 10px;"></div>
+            
             <div class="status-icon success">
                 <i class="fas fa-check-circle"></i>
             </div>
             
             <div class="form-header">
-                <h2>LOGGED OUT</h2>
-                <p>Terima kasih telah menggunakan layanan hotspot kami. Sesi Anda telah diakhiri.</p>
+                <h2 data-i18n="logout_title">LOGGED OUT</h2>
+                <p data-i18n="logout_desc">Terima kasih telah menggunakan layanan hotspot kami. Sesi Anda telah diakhiri.</p>
             </div>
             
             <div class="info-box">
                 <table class="info-table">  
-                    <tr><td>Username</td><td>$(username)</td></tr>
-                    <tr><td>IP Address</td><td>$(ip)</td></tr>
-                    <tr><td>MAC Address</td><td>$(mac)</td></tr>
-                    <tr><td>Session Time</td><td>$(uptime)</td></tr>
+                    <tr><td data-i18n="username_label">Username</td><td><b>$(username)</b></td></tr>
+                    <tr><td data-i18n="ip_label">IP Address</td><td>$(ip)</td></tr>
+                    <tr><td data-i18n="mac_label">MAC Address</td><td>$(mac)</td></tr>
+                    <tr><td data-i18n="session_time_label">Session Time</td><td>$(uptime)</td></tr>
                     $(if session-time-left)
-                    <tr><td>Time Left</td><td>$(session-time-left)</td></tr>
+                    <tr><td data-i18n="time_left_label">Time Left</td><td>$(session-time-left)</td></tr>
                     $(endif)
-                    <tr><td>Usage (Up/Down)</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+                    <tr><td data-i18n="usage_label">Usage (Up/Down)</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
                 </table>
             </div>
             
             <form action="$(link-login)" name="login" onSubmit="return openLogin()">
                 <div class="button-container">
-                    <button type="submit">LOG IN AGAIN <i class="fas fa-redo"></i></button>
+                    <button type="submit" data-i18n="login_again_button">LOG IN AGAIN <i class="fas fa-redo"></i></button>
                 </div>
             </form>
             
             <div class="footer">
-                <p>Created By <a href="https://github.com/RixLux" target="_blank">Luxia</a></p>
+                <p>Created By <a href="https://github.com/RixLux" target="_blank">RixLux</a></p>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="lang.js"></script>
 </body>
 </html>

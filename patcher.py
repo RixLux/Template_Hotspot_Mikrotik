@@ -111,7 +111,7 @@ def patch_to_online():
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Patch Luxia Hotspot Template for Online/Offline mode.')
+    parser = argparse.ArgumentParser(description='Patch Hotspot Template for Online/Offline mode.')
     parser.add_argument('mode', choices=['online', 'offline'], help='The mode to switch to.')
     
     args = parser.parse_args()

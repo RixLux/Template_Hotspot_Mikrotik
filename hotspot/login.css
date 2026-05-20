@@ -247,6 +247,23 @@ button:active, .btn:active {
     to { transform: rotate(360deg); }
 }
 
+/* Language Selector */
+.lang-select {
+    background-color: var(--background-dark);
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.lang-select:hover {
+    border-color: var(--primary-color);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .main-container {

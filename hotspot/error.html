@@ -12,17 +12,19 @@
 <body>
     <div class="main-container">
         <div class="left-panel">
-            <div class="logo-text">Luxia</div>
+            <div class="logo-text">RixLux</div>
         </div>
         
         <div class="right-panel">
+            <div id="lang-selector-container" style="text-align: right; margin-bottom: 10px;"></div>
+            
             <div class="status-icon error">
                 <i class="fas fa-exclamation-triangle"></i>
             </div>
 
             <div class="form-header">
-                <h2>ERROR</h2>
-                <p>Terjadi kesalahan saat memproses permintaan Anda.</p>
+                <h2 data-i18n="error_title">ERROR</h2>
+                <p data-i18n="error_desc">Terjadi kesalahan saat memproses permintaan Anda.</p>
             </div>
 
             <div class="info-box" style="border-left: 4px solid var(--error-color);">
@@ -32,13 +34,14 @@
             </div>
 
             <div class="button-container">
-                <a href="$(link-login)" class="btn">BACK TO LOGIN <i class="fas fa-chevron-left"></i></a>
+                <a href="$(link-login)" class="btn" data-i18n="back_to_login">BACK TO LOGIN <i class="fas fa-chevron-left"></i></a>
             </div>
 
             <div class="footer">
-                <p>Created By <a href="https://github.com/RixLux" target="_blank">Luxia</a></p>
+                <p>Created By <a href="https://github.com/RixLux" target="_blank">RixLux</a></p>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="lang.js"></script>
 </body>
 </html>
